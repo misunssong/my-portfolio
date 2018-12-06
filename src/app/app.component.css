@@ -1,0 +1,22 @@
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+} 
+.contents {
+    display: block;
+    position: relative;
+    padding: 76px 0 0 0;
+}
+.inner-contents {
+    position: relative;
+    padding-left:300px;
+}
+
+@media (max-width:767px){
+    .inner-contents {
+        padding-left:0;
+    }
+}
+

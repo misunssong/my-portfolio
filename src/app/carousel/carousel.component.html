@@ -1,0 +1,10 @@
+<div class="carousel-wrap">
+  <h2 class="title">carousel</h2>
+  <ul class="slider">
+    <li *ngFor="let slide of slides, let i = index;" [class]="'slide' + (i + 1)">
+      <img [src]="'/assets/img/slide0'+ (i+1) +'.jpg'" alt="">
+      <p class="txt">{{slide.text}}</p>
+      <p class="txt">{{slide.textSmall}}</p>
+    </li>
+  </ul>
+</div>

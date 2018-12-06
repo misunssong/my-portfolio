@@ -1,0 +1,30 @@
+
+<div class="menuIcon" (click)="toggleClassActive = !toggleClassActive"><!-- (click)="showStyle = !showStyle;" -->
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<nav class="menubar" [class.active]="!toggleClassActive"><!--[style.margin-left]="getStyle()"-->
+    <!-- <h1 class="logo">My Angular Portfolio</h1> -->
+    <ul class="menulist">
+        <li (click)="selectedItem=i"
+         *ngFor="let item of items, let i = index; let x of statementresponse;" [class.active]="selectedItem == i" >
+            <a href="" [routerLink]="item.routerLink">
+                {{item.text}}
+            </a>
+        </li><!--routerLink="{{links[i]}} "--><!--[routerLink]="links[i]"--><!--[class.highlight]="isHighlighted[i]"--><!-- (click)="isHighlighted[i] = !isHighlighted[i]" -->
+    </ul>
+    <!-- <ul class="menulist">
+        <li><a href="">Dashboard</a></li>
+        <li><a href="" routerLink="/weather" (click)="isHighlighted = !isHighlighted" [class.highlight]="isHighlighted">Weather</a></li>
+        <li><a href="" routerLink="/chart" (click)="isHighlighted = !isHighlighted" [class.highlight]="isHighlighted">Chart</a></li>
+        <li><a href="">UI Elements</a></li>
+        <li><a href="">Forms</a></li>
+        <li><a href="">Tables</a></li>
+        <li><a href="">Maps</a></li>
+        <li><a href="">Health Care</a></li> 
+    </ul> -->
+</nav>
+<!--[attr.data-selected]="false" -->
+<!--(click)="toggleClass(item)"-->
+<!--[ngClass]="{'highlight': item.active}" -->

@@ -1,0 +1,68 @@
+.menubar {
+    position: fixed;
+    top:76px;
+    left:0;
+    width: 300px;
+    background-color: #555;
+    z-index: 100;
+}
+
+.my-class {
+    margin-left:-300px;
+}
+
+.menuIcon {
+    display:none;
+    position: absolute;
+    right:0;
+    top:0;
+    padding: 20px;
+    vertical-align: bottom;
+}
+
+.menuIcon>div {
+    margin: 6px 0;
+    width: 30px;
+    height: 4px;
+    background-color: #555;
+}
+
+.menulist {
+    padding: 0 0 500px 0;
+}
+
+.menulist li {
+    position: relative;
+}
+
+.menulist li a {
+    display: block;
+    padding: 25px 50px;
+    color: #fff;
+}
+
+.menulist li a:hover {
+    /*background-color:pink;*/
+    /*color:#555;*/
+    border-bottom:2px solid #fff;
+}
+
+
+.menulist li.active a {
+    background: hotpink; 
+}
+
+@media (max-width:767px){
+    .menuIcon {
+        display: inline-block;
+    }
+    .menubar {
+        position: absolute;
+        left:auto;
+        right:-300px;
+    }
+    .menubar.active {
+        position: absolute;
+        right:0;
+    }
+}
