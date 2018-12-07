@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+//import * from 'jquery/dist/jquery';
+declare var jquery:any;
+declare var $ :any;
+//import * as $ from 'jquery/dist/jquery.min.js';
+
 
 @Component({
   selector: 'app-carousel',
@@ -18,6 +23,22 @@ export class CarouselComponent implements OnInit {
   }
 
   ngOnInit() {
+    $(document).ready(function($) { 
+      $('.slider').bxSlider({ 
+        // speed: 1500, 
+        // pause: 5000, 
+        // mode: 'fade', 
+        // captions: true, 
+        // auto: false, 
+        // infiniteLoop: true, 
+        // stopAuto: false, 
+        // pager: false, 
+        // nextSelector: '#slider-next', 
+        // prevSelector: '#slider-prev', 
+      }); 
+    }); 
   }
+
+
 
 }
