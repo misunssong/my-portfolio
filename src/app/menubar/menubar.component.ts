@@ -15,7 +15,7 @@ export class MenubarComponent implements OnInit {
       {text: "Weather", routerLink:"/weather"},
       {text: "Chart", routerLink:"/chart"},
       {text: "Carousel", routerLink:"/carousel"},
-      {text: "Forms", routerLink:"/forms"},
+      {text: "Calendar", routerLink:"/calendar"},
       {text: "Tables", routerLink:"/tables"},
       {text: "Maps", routerLink:"/maps"},
       {text: "Health Care", routerLink:"/health-care"},

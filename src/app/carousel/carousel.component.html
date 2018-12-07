@@ -4,11 +4,25 @@
   <div class="slider-wrap">
     <ul class="slider">
       <li *ngFor="let slide of slides, let i = index;" [class]="'slide' + (i + 1)">
-        <img [src]="'/assets/img/slide0'+ (i+1) +'.jpg'" alt="">
+        <img [src]="'/assets/img/slide0'+ (i+1) +'.jpg'" alt="" class="bxslider-img">
         <p class="txt">{{slide.text}}</p>
         <p class="txt">{{slide.textSmall}}</p>
       </li>
     </ul>
+  </div>
+  <h3 class="title02">Swiper</h3>
+  <!-- Swiper -->
+  <div class="slider-wrap">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let slide of slides, let i = index;">
+          <img [src]="'/assets/img/slide0'+ (i+1) +'.jpg'" alt="" class="swiper-img">
+          <p class="txt">{{slide.text}}</p>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 </div>
 <script src="/src/assets/js/jquery.bxslider.min.js"></script>

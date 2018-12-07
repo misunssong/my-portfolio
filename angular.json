@@ -24,11 +24,13 @@
                         ],
                         "styles": [
                             "src/styles.css",
-                            "src/assets/jquery.bxslider/jquery.bxslider.css"
+                            "src/assets/jquery.bxslider/jquery.bxslider.css",
+                            "src/assets/swiper.js/swiper.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "src/assets/jquery.bxslider/jquery.bxslider.js"
+                            "src/assets/jquery.bxslider/jquery.bxslider.js",
+                            "src/assets/swiper.js/swiper.js"
                         ]
                     },
                     "configurations": {
@@ -75,11 +77,13 @@
                         "karmaConfig": "src/karma.conf.js",
                         "styles": [
                             "src/styles.css",
-                            "src/assets/jquery.bxslider/jquery.bxslider.css"
+                            "src/assets/jquery.bxslider/jquery.bxslider.css",
+                            "src/assets/swiper.js/swiper.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "src/assets/jquery.bxslider/jquery.bxslider.js"
+                            "src/assets/jquery.bxslider/jquery.bxslider.js",
+                            "src/assets/swiper.js/swiper.js"
                         ],
                         "assets": [
                             "src/favicon.ico",

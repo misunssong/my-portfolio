@@ -10,6 +10,7 @@ import {MenubarComponent} from './menubar/menubar.component';
 import {WeatherComponent} from './weather/weather.component';
 import { ChartComponent } from './chart/chart.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { CalendarComponent } from './calendar/calendar.component';
 // import $ from 'jquery/dist/jquery';
 
 
@@ -19,7 +20,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     AppComponent,
     HeaderComponent,
     ChartComponent,
-    CarouselComponent
+    CarouselComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     RouterModule.forRoot([
       //{path: 'weather', component: WeatherComponent}
       {path: 'chart', component: ChartComponent},
-      {path: 'carousel', component: CarouselComponent}
+      {path: 'carousel', component: CarouselComponent},
+      {path: 'calendar', component: CalendarComponent}
     ]),
   ],
   providers: [],
