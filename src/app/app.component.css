@@ -3,11 +3,12 @@ header {
     top:0;
     left:0;
     right:0;
+    z-index: 100;
 } 
 .contents {
     display: block;
     position: relative;
-    padding: 76px 0 0 0;
+    padding: 76px 0 400px 0;
 }
 .inner-contents {
     position: relative;

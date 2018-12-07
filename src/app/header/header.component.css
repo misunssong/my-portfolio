@@ -7,7 +7,7 @@
     color: #555;
     background-color: #ddd;
     box-sizing: border-box;
-    z-index: 100;
+    
 }
 
 .clearfix:after {

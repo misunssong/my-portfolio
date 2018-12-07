@@ -44,7 +44,8 @@
 .menulist li a:hover {
     /*background-color:pink;*/
     /*color:#555;*/
-    border-bottom:2px solid #fff;
+    /* border-bottom:2px solid #fff; */
+    background-color:black;
 }
 
 

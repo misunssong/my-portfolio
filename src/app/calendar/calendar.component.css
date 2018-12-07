@@ -1,3 +1,54 @@
+/* @import "../../assets/css/custom.calendar.css"; */
+
 .calendar-wrap {
     padding:20px;
-}    
+} 
+
+.cal-wrap {
+    display:block;
+    vertical-align:top;
+    position: relative;
+}
+
+.calendar {
+    width:300px; 
+}
+
+.range-wrap {
+    display:inline-block;
+    position: relative;
+    vertical-align:top;
+    background-color:#ddd;
+    padding:15px;
+    margin:40px 0px;
+    border-radius:5px;
+}
+.range-wrap > div {
+    display:inline-block;
+    position: relative;
+    vertical-align:top;
+}
+.range-wrap label{
+    display:block;
+    margin:5px 10px 0;
+    padding:3px;
+    font-size: 14px;
+    font-weight:600;
+}
+.range-wrap input {
+    padding:5px;
+    margin:10px;
+    font-size:16px;
+}
+
+.start {
+    display:none;
+    position: absolute;
+    top:80px;
+}
+.end {
+    display:none;
+    position: absolute;
+    top:80px;
+}
+
