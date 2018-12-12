@@ -167,4 +167,8 @@
   .ui-datepicker.ui-datepicker-multi.ui-datepicker .ui-datepicker-calendar .ui-state-default:hover {
     background: #ccb268;
   }
+
+  .range .ui-datepicker.ui-datepicker-multi.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day .ui-state-default {
+    background: #ccb268;
+  }
   

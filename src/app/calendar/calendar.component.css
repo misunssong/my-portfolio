@@ -6,7 +6,6 @@
 
 .cal-wrap {
     display:block;
-    vertical-align:top;
     position: relative;
 }
 
@@ -23,12 +22,13 @@
     margin:40px 0px;
     border-radius:5px;
 }
-.range-wrap > div {
+.range-wrap .box {
     display:inline-block;
     position: relative;
     vertical-align:top;
 }
-.range-wrap label{
+
+.range-wrap label {
     display:block;
     margin:5px 10px 0;
     padding:3px;
@@ -45,10 +45,22 @@
     display:none;
     position: absolute;
     top:80px;
+    z-index: 50;
 }
 .end {
     display:none;
     position: absolute;
     top:80px;
+    z-index: 50;
 }
+
+.range {
+    display:none;
+    position: absolute;
+    top:80px;
+    left:0;
+    z-index: 50;
+}
+
+
 

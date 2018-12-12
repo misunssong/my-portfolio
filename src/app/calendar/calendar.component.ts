@@ -47,6 +47,8 @@ export class CalendarComponent implements OnInit {
         $( ".start" ).hide();
         $( ".end" ).show();
       });
+      //var selectedStartDate;
+      //var selectedEndDate;
       $( ".start" ).datepicker({
         dateFormat: "yy-mm-dd",
         dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
@@ -58,8 +60,8 @@ export class CalendarComponent implements OnInit {
         minDate:0,
         showMonthAfterYear:true,
         onSelect:function(){
-          var txt = $(this).val()
-          $('#start').val(txt);
+          var selectedStartDate = $(this).val();
+          $('#start').val(selectedStartDate);
           $( ".start" ).hide();
           $( ".end" ).show();
         }
@@ -75,12 +77,71 @@ export class CalendarComponent implements OnInit {
         minDate:0,
         showMonthAfterYear:true,
         onSelect:function(){
-          var txt = $(this).val()
-          $('#end').val(txt);
+          var selectedEndDate = $(this).val();
+          $('#end').val(selectedEndDate);
           $( ".end" ).hide();
         }
       });
        /*//date range */
+
+      /* range */
+      var date01;
+      var date02;
+      var hoverDate;
+
+       
+      $('#date01').click(function(){
+        $( ".range" ).show();
+        $( ".range" ).datepicker("option", "onSelect", function(){
+            date01 = $(this).val();
+            $('#date01').val(date01);
+            $( ".range" ).hide();
+          });
+      });
+      $('#date02').click(function(){
+        $( ".range" ).show();
+        $( ".range" ).datepicker("option", "onSelect", function(){
+            date02 = $(this).val();
+            $('#date02').val(date02);
+            $( ".range" ).hide();
+            
+          });
+      });
+      
+      $( ".range" ).datepicker({
+        dateFormat: "yy-mm-dd",
+        dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
+        monthNames: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ],
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        numberOfMonths: 2,
+        yearSuffix:'년',
+        minDate:0,
+        showMonthAfterYear:true,
+      });
+
+      $('.range').delegate('.ui-datepicker td', 'mouseover', function(){ 
+          // get date from hovered cell 
+          hoverDate = $(this).data('year')+'-'+($(this).data('month')+1)+'-'+$('a',this).html(); 
+          // parse hovered date into milliseconds 
+          //hoverDate = $.datepicker.parseDate('yy-mm-dd', hoverDate); 
+          hoverDate= hoverDate.split("-");
+          var hoverDateArray = new Date(hoverDate[0], hoverDate[1], hoverDate[2]);
+          //date01= date01.split("-");
+          //var date01Array = new Date(date01[0], date01[1], date01[2]);
+          console.log("hoverDate = ",hoverDate);
+          console.log("date01 = ", date01);
+          //date01 = $.datepicker.parseDate('yy-mm-dd', date01);
+          var coloredDates = $('.ui-datepicker td');
+          if (date01 <= coloredDates || coloredDates <= hoverDate) { 
+            coloredDates.addClass('sejour'); 
+           } else { 
+            coloredDates.removeClass('sejour'); 
+           } 
+  
+        });
+      /*// range */
+
 
        var start_date = null, end_date = null;
        var timestamp_start_date = null, timestamp_end_date = null;

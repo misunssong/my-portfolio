@@ -1,0 +1,67 @@
+.box {
+  background-color: #eee;
+}
+
+p {
+  color: #eee;
+}
+
+body {
+  background: pink;
+}
+
+body.blue {
+  background: skyblue;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+a:visited {
+  color: purple;
+}
+
+.container .child {
+  color: blue;
+}
+
+.sibling {
+  color: gray;
+}
+
+.success-box, .error-box {
+  padding: 0.5em;
+}
+
+.success-box {
+  color: green;
+}
+
+.error-box {
+  color: red;
+}
+
+h1 {
+  color: green;
+  font-size: 12px;
+}
+
+.container {
+  width: 900px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.my-module {
+  width: 65%;
+}

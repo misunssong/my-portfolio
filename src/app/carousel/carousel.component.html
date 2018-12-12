@@ -12,8 +12,8 @@
   </div>
   <h3 class="title02">Swiper</h3>
   <!-- Swiper -->
-  <div class="slider-wrap">
-    <div class="swiper-container">
+  <div class="slider-wrap01">
+    <div class="swiper-container basicSlide">
       <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let slide of slides, let i = index;">
           <img [src]="'/assets/img/slide0'+ (i+1) +'.jpg'" alt="" class="swiper-img">
@@ -24,5 +24,20 @@
       <div class="swiper-pagination"></div>
     </div>
   </div>
+
+    <!-- Swiper -->
+    <div class="slider-wrap02">
+      <div class="swiper-container verticalSlide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let slide of slides, let i = index;">
+            <img [src]="'/assets/img/slide0'+ (i+1) +'.jpg'" alt="" class="swiper-img">
+            <p class="txt">{{slide.text}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
 </div>
-<script src="/src/assets/js/jquery.bxslider.min.js"></script>
+<!-- <script src="/src/assets/js/jquery.bxslider.min.js"></script> -->
