@@ -54,7 +54,7 @@
     z-index: 50;
 }
 
-.range {
+.range01, .range02 {
     display:none;
     position: absolute;
     top:80px;

@@ -11,9 +11,9 @@ export class MenubarComponent implements OnInit {
 
   constructor() { 
     this.items = [
-      {text: "Dashboard", routerLink:"/dashboard"},
+      // {text: "Dashboard", routerLink:"/dashboard"},
       {text: "Weather", routerLink:"/weather"},
-      {text: "Chart", routerLink:"/chart"},
+      {text: "Board", routerLink:"/board"},
       {text: "Carousel", routerLink:"/carousel"},
       {text: "Calendar", routerLink:"/calendar"},
       {text: "Tables", routerLink:"/tables"},

@@ -1,14 +1,34 @@
 .menubar {
-    position: fixed;
-    top:76px;
-    left:0;
-    width: 300px;
+    position: relative;
     background-color: #555;
-    z-index: 100;
 }
 
 .my-class {
     margin-left:-300px;
+}
+
+.menulist {
+    padding: 0;
+}
+
+.menulist li {
+    position: relative;
+    display: block;
+}
+
+.menulist li a {
+    display: block;
+    padding:20px 50px;
+    color: #fff;
+}
+
+.menulist li a:hover {
+    background-color:black;
+}
+
+
+.menulist li.active a {
+    background: hotpink; 
 }
 
 .menuIcon {
@@ -18,52 +38,41 @@
     top:0;
     padding: 20px;
     vertical-align: bottom;
-}
-
-.menuIcon>div {
-    margin: 6px 0;
-    width: 30px;
-    height: 4px;
-    background-color: #555;
-}
-
-.menulist {
-    padding: 0 0 500px 0;
-}
-
-.menulist li {
-    position: relative;
-}
-
-.menulist li a {
-    display: block;
-    padding: 25px 50px;
-    color: #fff;
-}
-
-.menulist li a:hover {
-    /*background-color:pink;*/
-    /*color:#555;*/
-    /* border-bottom:2px solid #fff; */
-    background-color:black;
-}
-
-
-.menulist li.active a {
-    background: hotpink; 
+    cursor: pointer;
 }
 
 @media (max-width:767px){
+
+    .menuIcon > div {
+        margin: 6px 0;
+        width: 30px;
+        height: 4px;
+        background-color: #fff;
+        transition: 0.4s;
+    }
     .menuIcon {
         display: inline-block;
-    }
+        z-index: 100;
+    }  
+    .menuIcon.active .bar1 {-webkit-transform:rotate(-45deg) translate(-9px, 6px); transform:rotate(-45deg) translate(-9px, 6px);}
+    .menuIcon.active .bar2 {opacity:0;}
+    .menuIcon.active .bar3 {-webkit-transform:rotate(45deg) translate(-8px, -8px); transform:rotate(45deg) translate(-7px, -6px);}
     .menubar {
-        position: absolute;
-        left:auto;
-        right:-300px;
+        display: none;
+        position: relative;
+        width:100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
     .menubar.active {
-        position: absolute;
-        right:0;
+        display:inline-block;
+        /* position: absolute;
+        right:0; */
+    }
+    .menulist li {
+        display: inline-block;
+    }
+    .menulist li a {
+        padding:10px;
     }
 }

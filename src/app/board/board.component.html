@@ -1,0 +1,27 @@
+<div class="board-wrap">
+  
+  <h2>Board</h2>
+  <div class="board-box01">
+    <ul class="input-list">
+      <li class="input-wrap"><label for="input01">Title:</label> <input id="input01" type="text" [(ngModel)]="boardForm.title" autofocus></li>
+      <li class="input-wrap"><label for="input02">Name:</label> <input id="input02" type="text" [(ngModel)]="boardForm.writer"></li>
+    </ul>
+    <button class="btn-add" type="button" (click)="addBoard()">Add</button>
+  </div>
+  <div class="board-box01">
+    <table class="table01" border=1>
+        <tr>
+            <td style="width: 50px">No.</td>
+            <td style="width: 200px">Title</td>
+            <td style="width: 70px">Name</td>
+            <td style="width: 50px"></td>
+        </tr>
+        <tr *ngFor="let item of boardlist; let inx = index">
+            <td>{{inx+1}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.writer}}</td>
+            <td><button class="btn-remove" type="button" (click)="removeBoard(item.id)">삭제</button></td>
+        </tr>
+    </table>
+  </div>
+</div>

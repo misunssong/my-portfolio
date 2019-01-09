@@ -1,21 +1,36 @@
-header {
+.nav {
+    display: inline-block;
     position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index: 100;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color:#555;
+}
+header {
+    display: inline-block;
+    position: relative;
 } 
 .contents {
     display: block;
     position: relative;
-    padding: 76px 0 400px 0;
+    min-height:100%;
+    padding:0 0 400px 0;
+    margin-left:300px;
 }
 .inner-contents {
     position: relative;
-    padding-left:300px;
 }
 
 @media (max-width:767px){
+    .nav {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .contents {
+        margin:0;
+    }
     .inner-contents {
         padding-left:0;
     }

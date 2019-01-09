@@ -47,8 +47,6 @@ export class CalendarComponent implements OnInit {
         $( ".start" ).hide();
         $( ".end" ).show();
       });
-      //var selectedStartDate;
-      //var selectedEndDate;
       $( ".start" ).datepicker({
         dateFormat: "yy-mm-dd",
         dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
@@ -88,27 +86,38 @@ export class CalendarComponent implements OnInit {
       var date01;
       var date02;
       var hoverDate;
+      var coloredDates;
 
        
       $('#date01').click(function(){
-        $( ".range" ).show();
-        $( ".range" ).datepicker("option", "onSelect", function(){
+        $( ".range01" ).show();
+        $( ".range01" ).datepicker("option", "onSelect", function(){
             date01 = $(this).val();
             $('#date01').val(date01);
-            $( ".range" ).hide();
+            coloredDates = $('.ui-datepicker td');
+            $( ".range01" ).hide();
           });
       });
       $('#date02').click(function(){
-        $( ".range" ).show();
-        $( ".range" ).datepicker("option", "onSelect", function(){
+        $( ".range02" ).show();
+        //$('.range02').datepicker();
+        $( ".range02" ).datepicker('option', {
+          minDate:date01,
+          onSelect: function(){
             date02 = $(this).val();
             $('#date02').val(date02);
-            $( ".range" ).hide();
-            
-          });
+            $( ".range02" ).hide();
+          },
+          beforeShowDay: function(date) {
+            getHoverDate();
+            date= getDDate(date);
+            console.log("date=",date);
+            return [true, getdate01 && (gethoverDate && date >= getdate01 && date <= gethoverDate) ? "sejour" : ""];
+          }
+        });
       });
       
-      $( ".range" ).datepicker({
+      $( ".range01, .range02" ).datepicker({
         dateFormat: "yy-mm-dd",
         dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
         monthNames: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ],
@@ -119,27 +128,102 @@ export class CalendarComponent implements OnInit {
         minDate:0,
         showMonthAfterYear:true,
       });
+      var parseddate01;
+      var parsedhoverDate;
+      var gethoverDate;
+      var getdate01;
+function getHoverDate(){
+      $('.range02').delegate('.ui-datepicker td', 'mouseover', function(){ 
 
-      $('.range').delegate('.ui-datepicker td', 'mouseover', function(){ 
+        var year = $(this).data('year');
+        var month = ($(this).data('month')+1);
+        var date = $('a',this).html();
+        if ((date+"").length < 2) {
+          date = "0" + date;
+        }
+        // if ((month+"").length < 2) {
+        //   month = "0" + month;
+        // }
+
           // get date from hovered cell 
-          hoverDate = $(this).data('year')+'-'+($(this).data('month')+1)+'-'+$('a',this).html(); 
+          //hoverDate = $(this).data('year')+'-'+($(this).data('month')+1)+'-'+$('a',this).html(); 
+          hoverDate = year + month + date;
+          gethoverDate = eval(hoverDate);
           // parse hovered date into milliseconds 
-          //hoverDate = $.datepicker.parseDate('yy-mm-dd', hoverDate); 
-          hoverDate= hoverDate.split("-");
-          var hoverDateArray = new Date(hoverDate[0], hoverDate[1], hoverDate[2]);
-          //date01= date01.split("-");
+          parsedhoverDate = $.datepicker.parseDate('yy-mm-dd', hoverDate); 
+          parseddate01 = $.datepicker.parseDate('yy-mm-dd', date01);
+          //var hoverDateArray= hoverDate.split("-");
+          //hoverDateArray = new Date(hoverDate[0], hoverDate[1], hoverDate[2]);
+          date01= date01.split("-");
+          //getdate01 = getDDate(date01);
           //var date01Array = new Date(date01[0], date01[1], date01[2]);
+          getdate01 = date01[0].toString() + date01[1].toString() +date01[2].toString();
+
           console.log("hoverDate = ",hoverDate);
+          console.log("gethoverDate = ",gethoverDate);
+          console.log("parsedhoverDate = ",parsedhoverDate);
           console.log("date01 = ", date01);
-          //date01 = $.datepicker.parseDate('yy-mm-dd', date01);
-          var coloredDates = $('.ui-datepicker td');
-          if (date01 <= coloredDates || coloredDates <= hoverDate) { 
-            coloredDates.addClass('sejour'); 
-           } else { 
-            coloredDates.removeClass('sejour'); 
-           } 
+          console.log("parseddate01 = ", parseddate01);
+          console.log("date01 = ", getdate01);
+          
+          //coloredDates = coloredDates.data('year')+'-'+(coloredDates.data('month')+1)+'-'+ coloredDates.children('a').html();
+          //coloredDates = getdatedata(coloredDates);
+          function parsing(beforeParsed) {
+            var parsed = $.datepicker.parseDate('yy-mm-dd', beforeParsed); 
+            return parsed;
+          }
+          //console.log("coloredDates = ", coloredDates);
+          //console.log(parsing(coloredDates));
+          function getdatedata(this){
+            $(this).data('year')+'-'+($(this).data('month')+1)+'-'+$('a',this).html();
+          }
+          //var parsedcoloredDates = $.datepicker.parseDate('yy-mm-dd', coloredDates);
+          //console.log("date = ", date(date01));
+          // if (parsedhoverDate > parsing(coloredDates) ) {
+          //   coloredDates.addClass('sejour'); 
+          //   console.log("addClass success!");
+          //  } else { 
+          //   coloredDates.removeClass('sejour'); 
+          //  } 
   
+          // $( ".range02" ).datepicker('option', {
+          //   minDate:date01,
+          //   onSelect: function(){
+          //     date02 = $(this).val();
+          //     $('#date02').val(date02);
+          //     $( ".range02" ).hide();
+          //   },
+          //   beforeShowDay: function(date) {
+          //     //getHoverDate();
+          //     getDDate(date);
+          //     console.log("date=",date);
+          //     return [true, getdate01 && (gethoverDate && date >= getdate01 && date <= gethoverDate) ? "sejour" : ""];
+          //   }
+          // });
+
+
         });
+}
+
+
+      function getDDate(d){
+        // d = $.datepicker.parseDate('yy-mm-dd', d);
+        var dyear = d.getFullYear().toString();
+        var dmonth = (d.getMonth()+1).toString();
+        var ddate = d.getDate().toString();
+        if ((dmonth+"").length < 2) {
+          dmonth = "0" + dmonth;
+        }
+        if ((ddate+"").length < 2) {
+          ddate = "0" + ddate;
+        }
+        d= dyear+dmonth+ddate;
+        console.log("dyear=", dyear);
+        console.log("dmonth=", dmonth);
+        console.log("ddate=", ddate);
+        console.log("d=", d);
+        return d;
+      }
       /*// range */
 
 

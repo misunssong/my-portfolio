@@ -1,8 +1,8 @@
 
-<div class="menuIcon" (click)="toggleClassActive = !toggleClassActive"><!-- (click)="showStyle = !showStyle;" -->
-    <div></div>
-    <div></div>
-    <div></div>
+<div class="menuIcon" (click)="toggleClassActive = !toggleClassActive"  [class.active]="!toggleClassActive"><!-- (click)="showStyle = !showStyle;" -->
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
 </div>
 <nav class="menubar" [class.active]="!toggleClassActive"><!--[style.margin-left]="getStyle()"-->
     <!-- <h1 class="logo">My Angular Portfolio</h1> -->
@@ -14,16 +14,6 @@
             </a>
         </li><!--routerLink="{{links[i]}} "--><!--[routerLink]="links[i]"--><!--[class.highlight]="isHighlighted[i]"--><!-- (click)="isHighlighted[i] = !isHighlighted[i]" -->
     </ul>
-    <!-- <ul class="menulist">
-        <li><a href="">Dashboard</a></li>
-        <li><a href="" routerLink="/weather" (click)="isHighlighted = !isHighlighted" [class.highlight]="isHighlighted">Weather</a></li>
-        <li><a href="" routerLink="/chart" (click)="isHighlighted = !isHighlighted" [class.highlight]="isHighlighted">Chart</a></li>
-        <li><a href="">UI Elements</a></li>
-        <li><a href="">Forms</a></li>
-        <li><a href="">Tables</a></li>
-        <li><a href="">Maps</a></li>
-        <li><a href="">Health Care</a></li> 
-    </ul> -->
 </nav>
 <!--[attr.data-selected]="false" -->
 <!--(click)="toggleClass(item)"-->

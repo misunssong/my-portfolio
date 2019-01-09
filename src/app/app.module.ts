@@ -11,6 +11,7 @@ import {WeatherComponent} from './weather/weather.component';
 import { ChartComponent } from './chart/chart.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { BoardComponent } from './board/board.component';
 // import $ from 'jquery/dist/jquery';
 
 
@@ -21,7 +22,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     HeaderComponent,
     ChartComponent,
     CarouselComponent,
-    CalendarComponent
+    CalendarComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     FormsModule,
     RouterModule.forRoot([
       //{path: 'weather', component: WeatherComponent}
+      {path: 'board', component: BoardComponent},
       {path: 'chart', component: ChartComponent},
       {path: 'carousel', component: CarouselComponent},
       {path: 'calendar', component: CalendarComponent}
