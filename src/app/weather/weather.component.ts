@@ -30,7 +30,7 @@ export class WeatherComponent implements OnInit {
   }
 
 
-  onChange(val){
+  onChange(val:any){
     //alert(JSON.stringify(val));
     this.location.city=val;
     this.city=val;
@@ -47,7 +47,7 @@ export class WeatherComponent implements OnInit {
         
   }
 
-  save(event,val){
+  save(event:any, val:any){
     console.log(event); 
     console.log(val);
 

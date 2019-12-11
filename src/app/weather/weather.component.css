@@ -115,7 +115,7 @@
 .currentTemp {
     width: 220px;
     height: 200px;
-    background: rgb(41, 41, 41);
+    background:#313131;
     position: absolute;
     top: 0;
     left: 0;

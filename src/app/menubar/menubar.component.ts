@@ -40,7 +40,7 @@ export class MenubarComponent implements OnInit {
   //toggleClassActive:true;
   toggleClassActive: Array<boolean> = []; //메뉴바 toggle class active
 
-  toggleClass(item){
+  toggleClass(item:any){
     item.active = !item.active;
   }
 
