@@ -1,7 +1,7 @@
 # MyPortfolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
-제 첫번째 앵귤러 프로젝트를 소개합니다. 
+제 첫번째 앵귤러 프로젝트를 소개합니다. 앵귤러로 날씨 앱을 만들어보았습니다.
 
 ## Development server
 
