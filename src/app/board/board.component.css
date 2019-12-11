@@ -7,7 +7,7 @@
     padding:30px;
     width:500px;
 }
-.board-box01 input{
+.board-box01 input {
     display: inline-block;
     margin: 0 5px 0 0;
     padding: 10px;
@@ -35,9 +35,7 @@
     width:62px;
     box-sizing:border-box;
 }
-.table-wrap {
-    padding:20px;
-}
+
 .table01 {
     border:1px solid #555;
 }
@@ -60,4 +58,26 @@
 }
 .btn-add:hover {
     background-color: rgb(42, 178, 234);
+}
+
+
+
+@media (max-width:767px){
+    .board-wrap {
+        padding:10px;
+    }
+    .board-box01 {
+        padding:10px;
+        width:100%;
+    }
+    .board-box01 input {
+        width:150px;
+    }
+    .table-wrap {
+        position: relative;
+        overflow-x:scroll;
+        width:100%;
+        padding:20px;
+        box-sizing: border-box;
+    }
 }

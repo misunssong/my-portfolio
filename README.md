@@ -1,8 +1,7 @@
-안녕하세요~!
-
 # MyPortfolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+제 첫번째 앵귤러 프로젝트를 소개합니다. 
 
 ## Development server
 
