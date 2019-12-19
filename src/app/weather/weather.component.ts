@@ -33,7 +33,7 @@ export class WeatherComponent implements OnInit {
   onChange(val:any){
     //alert(JSON.stringify(val));
     this.location.city=val;
-    this.city=val;
+    //this.city=val;
   }
 
   constructor(private _weatherService:WeatherService) { }
@@ -42,13 +42,18 @@ export class WeatherComponent implements OnInit {
 
     this.city='london';
     this.code='uk';
+    let location={
+      city:this.city,
+      code:this.code
+    };
 
-    this.save(event, this.city);
+    this.save(this.city);
+    this.getWT();
         
   }
 
-  save(event:any, val:any){
-    console.log(event); 
+  save(val:any){
+    // console.log(event); 
     console.log(val);
 
     this.city= val;
@@ -71,6 +76,10 @@ export class WeatherComponent implements OnInit {
       if(this.value!= null){
         this.location = JSON.parse(this.value);
         //alert(this.location.city);
+        let location={
+          city:this.city,
+          code:this.code
+        };
       }else{
         //alert('데이터를 찾을 수 없습니다.');
         this.location={
@@ -97,6 +106,8 @@ export class WeatherComponent implements OnInit {
         this.conditions='&#xf002;';
       }else if(this.wtVal=='Clouds'){
         this.conditions='&#xf013;';
+      }else {
+        this.conditions='&#xf00d;';
       }
 
       
@@ -104,20 +115,6 @@ export class WeatherComponent implements OnInit {
   }
 
 
-
-
-
-
-
-    
-  
-
-
-
-
-  
-
-
-  
+ 
 
 }

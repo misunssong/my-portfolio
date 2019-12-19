@@ -37,12 +37,16 @@ export class MenubarComponent implements OnInit {
   //isClassVisible: false;
   //isHighlighted: Array<boolean> = [];
 
-  //toggleClassActive:true;
-  toggleClassActive: Array<boolean> = []; //메뉴바 toggle class active
+  //toggleClassActive:false;
+  //toggleClassActive: Array<boolean> = []; //메뉴바 toggle class active
+  //toggleClassActive: Array<boolean> = Array();
+  //toggleClassActive: Array<> = [];
+  //toggleClassActive: boolean[] = [true, false];
+  toggleClassActive: boolean;
 
-  toggleClass(item:any){
-    item.active = !item.active;
-  }
+  // toggleClass(item:any){
+  //   item.active = !item.active;
+  // }
 
-  selectItem=-1;
+  //selectItem=-1;
 }

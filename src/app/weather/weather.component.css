@@ -99,7 +99,7 @@
     background-color: rgb(42, 178, 234);
 }
 
-#weather_wrapper {
+.weather_wrapper {
     width: 400px;
     margin: 30px 0;
     background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);

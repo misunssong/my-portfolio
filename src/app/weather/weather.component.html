@@ -1,9 +1,9 @@
 <div class="weatherWrap">
     <h3 class="titContents">Angular Weather</h3>
-    <form action="" class="form-group">
+    <div class="form-group">
         <div>
             <div class="matInputW">
-                <input #myInput type="text" class="srchCity" name="city" value="" placeholder="City" [(ngModel)]="city" (ngModelChange)="onChange($event)">
+                <input #myInput type="text" class="srchCity" name="city" value="" placeholder="City" [(ngModel)]="city" (ngModelChange)="onChange(myInput.value)">
                 <!-- (input)="changeInput($event)"  -->
                 <label for="city" class="inputLabel">City</label>
             </div>
@@ -11,13 +11,14 @@
                 <input type="text" class="srchCity" name="code" (ngModel)="code" value="" placeholder="Code" (input)="changeInput($event)">
                 <label for="code" class="inputLabel">Code</label>
             </div> -->
-            <a class="btnSearch" (click)="save($event, myInput.value)">Save Changes</a>
+            <!-- <a class="btnSearch" (click)="save($event, myInput.value)">Save Changes</a> -->
+            <a class="btnSearch" (click)="save(myInput.value)">Save Changes</a>
         </div>
-    </form>
-    <div id="weather_wrapper">
+    </div>
+    <div class="weather_wrapper">
         <div class="weatherCard">
             <div class="currentTemp">
-                <span class="temp">{{ temp }} °</span>
+                <span class="temp"><i [innerHTML]='temp'></i><i>°</i></span>
                 <span class="location">{{ weather.city.name }}</span>
             </div>
             <div class="currentWeather">
